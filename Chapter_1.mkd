@@ -30,11 +30,13 @@ Answer:
 ## Average Time Per Mile
 
 ### Plan
-Pace = T/D
-Distance In Miles = 10 KM / 1.61 KM in a mile
-Average Minutes Per MPH = 43.5/Distance in Miles
+
+1. Pace = T/D
+2. Distance In Miles = 10 KM / 1.61 KM in a mile
+3. Average Minutes Per MPH = 43.5/Distance in Miles
 
 ### Code
+
     distanceKm = 10
     timeMinutes = 43.5
     distanceMiles = distanceKm/1.61 # <type 'float'> 6.21118012422
@@ -43,12 +45,14 @@ Average Minutes Per MPH = 43.5/Distance in Miles
 ## Average Speed in Miles Per Hour
 
 ### Plan
-V = D/T
-Average KM Per Minute = 10/43.5
-Average KM Per Hour = Average KM Per Minute * 60 Minutes Per Hour
-Average Miles Per Hour = Average KM Per Hour / 1.61 KM Per Mile
+
+1. V = D/T
+2. Average KM Per Minute = 10/43.5
+3. Average KM Per Hour = Average KM Per Minute * 60 Minutes Per Hour
+4. Average Miles Per Hour = Average KM Per Hour / 1.61 KM Per Mile
 
 ### Code
+
     distanceKm = 10
     timeMinutes = 43.5
     avgKmPerMinute = distanceKm/timeMinutes # <type 'float'> 0.229885057471
