@@ -1,0 +1,59 @@
+Chapter Two Exercises
+=====================
+
+# Exercise 1
+
+Question:
+
+If you type an integer with a leading zero, you might get a confusing error:
+
+    >>> zipcode = 02492
+                      ^
+    SyntaxError: invalid token
+
+Other numbers seem to work, but the results are bizarre:
+
+    >>> zipcode = 02132
+    >>> zipcode
+    1114
+
+Can you figure out what is going on? Hint: display the values 01, 010, 0100 and 01000.
+
+Answer:
+
+A leading '0' indicates to the interpreter that the number is a octal numeric literal (base 8).
+
+# Exercise 2
+
+Question:
+
+Type the following statements in the Python interpreter to see what they do:
+
+    5
+    x = 5
+    x + 1
+
+Now put the same statements into a script and run it. What is the output? Modify the script by transforming each expression into a print statement and then run it again.
+
+Answer:
+
+    # From the interpreter
+    >>> 5
+    5
+    >>> x = 5
+    >>> x + 1
+    6
+
+Running a script with just the expressions yields no output. The script is processed by the interpreter and exits.
+
+Running a script by transforming each expression into a print statement yields an error for the assignment statement.
+I guess that's because the assignment statement is a statement already?
+
+Also, a syntax error occurs due to white space in assignment statement.
+
+Removing the white space from the assignment statement and converting expressions in lines 1 and 3 into
+print statements yields proper output when run as a script.
+
+# Exercise 3
+
+# Exercise 4
