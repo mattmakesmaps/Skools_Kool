@@ -35,10 +35,10 @@ Distance In Miles = 10 KM / 1.61 KM in a mile
 Average Minutes Per MPH = 43.5/Distance in Miles
 
 ### Code
-distanceKm = 10
-timeMinutes = 43.5
-distanceMiles = distanceKm/1.61 # <type 'float'> 6.21118012422
-minutesPerMile = timeMinutes/distanceMiles # <type 'float'> 7.0035
+    distanceKm = 10
+    timeMinutes = 43.5
+    distanceMiles = distanceKm/1.61 # <type 'float'> 6.21118012422
+    minutesPerMile = timeMinutes/distanceMiles # <type 'float'> 7.0035
 
 ## Average Speed in Miles Per Hour
 
