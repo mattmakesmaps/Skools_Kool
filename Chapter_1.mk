@@ -1,0 +1,56 @@
+Chapter One Exercises
+=====================
+
+# Exercise 1.1
+
+Question:
+
+Write a well-structured English sentence with invalid tokens in it.
+Then write another sentence with all valid tokens but with invalid structure.
+
+Answer:
+
+Bad Token = 'The m@n jump3d over th3 m00n.'
+Bad Syntax = 'Moon over jumped man the the.'
+
+# Exercise 4
+
+Question:
+
+Start the Python interpreter and use it as a calculator.
+Python’s syntax for math operations is almost the same as standard mathematical notation.
+For example, the symbols +, - and / denote addition, subtraction and division, as you would expect.
+The symbol for multiplication is *.
+
+If you run a 10 kilometer race in 43 minutes 30 seconds, what is your average time per mile?
+What is your average speed in miles per hour? (Hint: there are 1.61 kilometers in a mile).
+
+Answer:
+
+## Average Time Per Mile
+
+### Plan
+Pace = T/D
+Distance In Miles = 10 KM / 1.61 KM in a mile
+Average Minutes Per MPH = 43.5/Distance in Miles
+
+### Code
+distanceKm = 10
+timeMinutes = 43.5
+distanceMiles = distanceKm/1.61 # <type 'float'> 6.21118012422
+minutesPerMile = timeMinutes/distanceMiles # <type 'float'> 7.0035
+
+## Average Speed in Miles Per Hour
+
+### Plan
+V = D/T
+Average KM Per Minute = 10/43.5
+Average KM Per Hour = Average KM Per Minute * 60 Minutes Per Hour
+Average Miles Per Hour = Average KM Per Hour / 1.61 KM Per Mile
+
+### Code
+    distanceKm = 10
+    timeMinutes = 43.5
+    avgKmPerMinute = distanceKm/timeMinutes # <type 'float'> 0.229885057471
+    avgKmPerHour = avgKmPerMinute*60 # <type 'float'> 13.7931034483
+    avgMilesPerHour = avgKmPerHour/1.61 # <type 'float'> 8.56714499893
