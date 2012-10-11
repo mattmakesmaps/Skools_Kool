@@ -10,8 +10,8 @@ Then write another sentence with all valid tokens but with invalid structure.
 
 Answer:
 
-Bad Token = 'The m@n jump3d over th3 m00n.'
-Bad Syntax = 'Moon over jumped man the the.'
+* Bad Token = 'The m@n jump3d over th3 m00n.'
+* Bad Syntax = 'Moon over jumped man the the.'
 
 # Exercise 4
 
