@@ -56,4 +56,72 @@ print statements yields proper output when run as a script.
 
 # Exercise 3
 
+Question:
+
+Assume that we execute the following assignment statements:
+
+    width = 17
+    height = 12.0
+    delimiter = '.'
+
+For each of the following expressions, write the value of the expression and the type (of the value of the expression).
+
+    width/2
+    width/2.0
+    height/3
+    1 + 2 * 5
+    delimiter * 5
+
+Use the Python interpreter to check your answers.
+
+Answer:
+
+    width/2 # Guess: 8, int; Correct
+    width/2.0 # Guess: 8.5, float; Correct
+    height/3 # Guess: 4.0, float; Correct
+    1 + 2 * 5 # Guess: 11, int; Correct
+    delimiter * 5 # Guess: syntax error; Incorrect! '.....', string
+
 # Exercise 4
+
+Question:
+
+Practice using the Python interpreter as a calculator:
+
+1. The volume of a sphere with radius r is 4/3 π r3. What is the volume of a sphere with radius 5? Hint: 392.7 is wrong!
+2. Suppose the cover price of a book is $24.95, but bookstores get a 40% discount. Shipping costs $3 for the first copy and 75 cents for each additional copy. What is the total wholesale cost for 60 copies?
+3. If I leave my house at 6:52 am and run 1 mile at an easy pace (8:15 per mile), then 3 miles at tempo (7:12 per mile) and 1 mile at easy pace again, what time do I get home for breakfast?
+
+Answer:
+
+Question 1:
+
+    >>> from math import pi
+    >>> (4.0/3.0)*pi*5**3 # (4/3) returns 1 due to floor division!
+    523.5987755982989
+
+Question 2:
+
+    >>> quantity = 60
+    >>> coverPrice = 24.95
+    >>> discount = 0.40
+    >>> netCost = (coverPrice*quantity)-(coverPrice*quantity)*0.40
+    >>> shipping = 3+(0.75*quantity)
+    >>> totalCost = netCost + shipping
+    946.199999999
+
+Question 3:
+
+    >>> from datetime import datetime, timedelta
+    >>> easyPaceSec = (8*60)+15
+    >>> tempPaceSec = (7*60)+12
+    >>> totalSec = (easyPaceSec*2)+(tempPaceSec*3)
+    >>> startTime = datetime(1,1,1,6,52)
+    >>> startTime
+    datetime.datetime(1, 1, 1, 6, 52)
+    >>> totalSecTimeDelta = timedelta(seconds=totalSec)
+    >>> totalSecTimeDelta
+    datetime.timedelta(0, 2286)
+    >>> endTime = startTime + totalSecTimeDelta
+    >>> endTime.time()
+    datetime.time(7, 30, 6)
