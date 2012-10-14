@@ -98,17 +98,19 @@ Question:
 
 This exercise can be done using only the statements and other features we have learned so far.
 Write a function that draws a grid like the following:
-+ - - - - + - - - - +
-|         |         |
-|         |         |
-|         |         |
-|         |         |
-+ - - - - + - - - - +
-|         |         |
-|         |         |
-|         |         |
-|         |         |
-+ - - - - + - - - - +
+
+    + - - - - + - - - - +
+    |         |         |
+    |         |         |
+    |         |         |
+    |         |         |
+    + - - - - + - - - - +
+    |         |         |
+    |         |         |
+    |         |         |
+    |         |         |
+    + - - - - + - - - - +
+
 Hint: to print more than one value on a line, you can print a comma-separated sequence:
 print '+', '-'
 If the sequence ends with a comma, Python leaves the line unfinished, so the value printed next appears on the same line.
