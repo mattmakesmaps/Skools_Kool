@@ -1,16 +1,16 @@
 """
+Random Edit
 Some Dummy Code for Chapter 3
 """
 def do_Func(f, val, iter):
     i=0
     while i < iter:
         f(val)
-        i=i+1
+        i+=1
 
 def printer(val):
+    """print some stuff"""
     print val
-
-do_Func(printer, 'some value', 5)
 
 # Create Grid
 
