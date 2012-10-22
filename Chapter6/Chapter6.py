@@ -72,6 +72,18 @@ def is_between(x,y,z):
     #return y >= x and y <=z
     return x <= y <= z # don't need the 'and' for compound compare
 
+def factorial(n):
+    """
+    bad ass example of recusion. cool to watch each frame have
+    different variable values on the stack.
+    """
+    if n == 0:
+        return 1
+    else:
+        recurse = factorial(n-1)
+        result = n * recurse
+        return result
+
 if __name__ == '__main__':
     print "Begin 6.1 Exercise 1"
     print compare(5,7)
@@ -87,3 +99,4 @@ if __name__ == '__main__':
     print "Begin 6.4 Exercise 3"
     print is_between(9,1,22)
     print is_between(10,15,20)
+    print factorial(3)
