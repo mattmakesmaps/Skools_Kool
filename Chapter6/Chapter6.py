@@ -74,10 +74,15 @@ def is_between(x,y,z):
 
 def factorial(n):
     """
-    bad ass example of recusion. cool to watch each frame have
+    bad ass example of recursion. cool to watch each frame have
     different variable values on the stack.
     """
-    if n == 0:
+    if not isinstance(n, int):
+        print 'Input is not a type of int.'
+        return None
+    elif n < 0:
+        print 'Input must be greater then 0.'
+    elif n == 0:
         return 1
     else:
         recurse = factorial(n-1)
@@ -99,4 +104,6 @@ if __name__ == '__main__':
     print "Begin 6.4 Exercise 3"
     print is_between(9,1,22)
     print is_between(10,15,20)
+    print factorial(-1)
+    print factorial(0.5)
     print factorial(3)
