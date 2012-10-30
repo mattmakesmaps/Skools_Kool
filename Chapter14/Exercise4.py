@@ -10,6 +10,7 @@ maybe dump results into a pickleable file, and can be used for search?
 """
 
 import os
+from collections import Counter
 
 def checkSumCreator(file):
     """Returns a list with the file name and checksum for a given file"""
@@ -24,7 +25,7 @@ def checkSumCreator(file):
 
 def fileFinder(rootDir, filetype):
     """Given a root directory and file type, return full paths for all matches"""
-    checkSums = {}
+    checkSums = {} # If storing just file names, can't see files with same name, different folder.
     fileLen = len(filetype)
     for root, dirs, files in os.walk(rootDir):
         for file in files:
@@ -33,9 +34,12 @@ def fileFinder(rootDir, filetype):
                 checkSums[os.path.join(root, file)] = csFile[1]
     return checkSums
 
-def findDups(dicts):
-    """Given a dictionary of file and md5s, identify dups"""
+def findDupsViaDict(dicts):
+    """Given a dictionary of file and md5s, identify dups using a counter pattern"""
     # Loop through completed dictionary using generator
+
+    # Use a counter to ID dups
+    # TODO currently fails quality check for checksums
     for key, value in dicts.iteritems():
         counter = 0
         if value in dicts.values():
@@ -43,9 +47,24 @@ def findDups(dicts):
         if counter > 1:
             print 'File has duplicate: %s' % key
 
+def findDupsViaCounter(dicts):
+    """Given a dictionary, identify dups using a counter collection"""
+    checkSumList = []
+    # Create the counter
+    for value in dicts.iteritems():
+        checkSumList.append(value)
+    checkSumCounter = Counter(checkSumList)
+
+    for key, value in checkSumCounter.iteritems():
+        if value > 1:
+            print "Duplicate Checksum Found: %s" % key
+
 if __name__ == '__main__':
-    filesAndChecks = fileFinder('/Users/matt/PycharmProjects/Skools_Kool/Chapter14','py')
+    filesAndChecks = fileFinder('/Users/matt/PyCharmProjects/Skools_Kool/Chapter14','py')
     print filesAndChecks
-    print "Begin Duplicate Check"
-    findDups(filesAndChecks)
+    print "Begin Duplicate Check using findDupsViaDict()"
+    findDupsViaDict(filesAndChecks)
+    print "End Duplicate Check"
+    print "Begin Dup Check using findDupsViaCounter()"
+    findDupsViaCounter(filesAndChecks)
     print "End Duplicate Check"
