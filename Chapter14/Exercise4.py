@@ -24,7 +24,8 @@ def checkSumCreator(file):
     return [fileName,checkSum]
 
 def fileFinder(rootDir, filetype):
-    """Given a root directory and file type, return full paths for all matches"""
+    """Given a root directory and file type, return a dictionary
+    containing fullpaths as keys and checksums as values"""
     checkSums = {} # If storing just file names, can't see files with same name, different folder.
     fileLen = len(filetype)
     for root, dirs, files in os.walk(rootDir):
@@ -42,16 +43,19 @@ def findDupsViaDict(dicts):
     # TODO currently fails quality check for checksums
     for key, value in dicts.iteritems():
         counter = 0
-        if value in dicts.values():
+        if value in dicts.itervalues():
             counter+=1
         if counter > 1:
             print 'File has duplicate: %s' % key
 
 def findDupsViaCounter(dicts):
-    """Given a dictionary, identify dups using a counter collection"""
+    """Given a dictionary, identify dups using a collection.Counter() collection"""
     checkSumList = []
     # Create the counter
-    for value in dicts.iteritems():
+    """NOTE: If you pass iteritems() a single variable,
+    that variable is assigned a 2 item tuple containing both
+    the key and value"""
+    for value in dicts.itervalues():
         checkSumList.append(value)
     checkSumCounter = Counter(checkSumList)
 
