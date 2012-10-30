@@ -9,25 +9,43 @@ To check for dups across the entire root dir and sub directories, i think you ne
 maybe dump results into a pickleable file, and can be used for search?
 """
 
-from os import walk, path, popen
+import os
 
 def checkSumCreator(file):
+    """Returns a list with the file name and checksum for a given file"""
     cmd = 'md5 ' + file
-    fp = popen(cmd)
+    fp = os.popen(cmd)
     res = fp.read()
     stat = fp.close()
     position = res.rfind(' = ')
-    return res[position+3:]
+    checkSum = res[position+3:].strip()
+    fileName = res[5:position-1]
+    return [fileName,checkSum]
 
 def fileFinder(rootDir, filetype):
     """Given a root directory and file type, return full paths for all matches"""
-    checkSums = []
+    checkSums = {}
     fileLen = len(filetype)
-    for root, dirs, files in walk(rootDir):
+    for root, dirs, files in os.walk(rootDir):
         for file in files:
-            checkSums.append(checkSumCreator(file))
             if file[-fileLen:] == filetype:
-                print path.join(root, file)
+                csFile = checkSumCreator(file)
+                checkSums[os.path.join(root, file)] = csFile[1]
+    return checkSums
+
+def findDups(dicts):
+    """Given a dictionary of file and md5s, identify dups"""
+    # Loop through completed dictionary using generator
+    for key, value in dicts.iteritems():
+        counter = 0
+        if value in dicts.values():
+            counter+=1
+        if counter > 1:
+            print 'File has duplicate: %s' % key
 
 if __name__ == '__main__':
-    print fileFinder('/Users/matt/PycharmProjects/Skools_Kool/Chapter14','py')
+    filesAndChecks = fileFinder('/Users/matt/PycharmProjects/Skools_Kool/Chapter14','py')
+    print filesAndChecks
+    print "Begin Duplicate Check"
+    findDups(filesAndChecks)
+    print "End Duplicate Check"
