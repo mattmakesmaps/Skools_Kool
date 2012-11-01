@@ -12,9 +12,9 @@ def linecount(filename):
 
 if __name__=='__main__':
     # Use sys.path.insert to add directory to python path
-    sys.path.insert(0,'/home/matt/projects/Skools_Kool/Chapter14/')
+    sys.path.insert(0,'/home/matt/projects/Skools_Kool/14/')
     print __name__
     import wc
     print __name__
     print os.getcwd()
-    print linecount('/home/matt/projects/Skools_Kool/Chapter14/wc.py')
+    print linecount('/home/matt/projects/Skools_Kool/14/wc.py')
