@@ -4,11 +4,6 @@ __author__ = 'matt'
 Write a program that searches a directory and all of its subdirectories, recursively, and returns a list of complete paths for all files with a given suffix (like .mp3). Hint: os.path provides several useful functions for manipulating file and path names.
 """
 
-"""
-To check for dups across the entire root dir and sub directories, i think you need to store all md5 checksums in an indexable file.
-maybe dump results into a pickleable file, and can be used for search?
-"""
-
 import os
 from collections import Counter
 
