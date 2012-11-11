@@ -13,12 +13,12 @@ def most_frequent(instring):
             dictCount[letter] = 1
 
     tupleCount = dictCount.items()
-#    for i in tupleCount:
+    for i in tupleCount:
          # I guess tuple assignment doesn't work for tuples
 #        i[0],i[1] = i[1],i[0]
-
+        i = i[1],i[0]
     # What the hell did I just do?
-    tupleCount.sort(key=lambda letter: letter[1], reverse=True)
+#    tupleCount.sort(key=lambda letter: letter[1], reverse=True)
 
     sortedList = []
     for eachTuple in tupleCount:
