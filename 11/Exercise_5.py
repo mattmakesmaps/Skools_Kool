@@ -22,6 +22,22 @@ def invert_dict_setdefault(d):
         inverse[val].append(key) # Append source key as new inverse value
     return inverse
 
+def invert_dict_Book(d):
+    # From the book
+    """Inverts a dictionary, returning a map from val to a list of keys.
+
+    If the mapping key->val appears in d, then in the new dictionary
+    val maps to a list that includes key.
+
+    d: dict
+
+    Returns: dict
+    """
+    inverse = {}
+    for key, val in d.iteritems(): # iteritems negates needing to search for a value based on a key
+        inverse.setdefault(val, []).append(key) # setdefault acts as a conditional test in a way
+    return inverse
+
 if __name__ == '__main__':
     mattDict = {'a': 1, 'p': 1, 'r': 2, 't': 1, 'o': 1}
     print invert_dict_setdefault(mattDict)
