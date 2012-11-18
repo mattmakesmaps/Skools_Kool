@@ -1,6 +1,6 @@
 __author__ = 'matt'
 """
-Modify the program from the previous exercise to print the 20 most frequently-used words in the book.
+Modify the previous program to read a word list (see Section 9.1) and then print all the words in the book that are not in the word list. How many of them are typos? How many of them are common words that should be in the word list, and how many of them are really obscure?
 """
 
 import sys, string
@@ -41,11 +41,13 @@ def processFile(fin, processFunc):
 
 if __name__ == '__main__':
     bookFile = '/Users/matt/Documents/PyCharm/Skools_Kool/13/Books/moby_dick.txt'
-    infile = '/Users/matt/Documents/PyCharm/Skools_Kool/13/testtext.txt'
+    wordFile = '/Users/matt/Documents/PyCharm/Skools_Kool/14/words.txt'
     bookWords, bookDistinctWords = processFile(bookFile, processLine)
+    wordWords, wordDistinctWords = processFile(wordFile, processLine)
 
-    # Print top 20 most frequently used words in the book
-    topTwentyBookWords = []
-    while len(topTwentyBookWords) < 20:
-        topTwentyBookWords.append(bookWords.popitem()) # popitem defaults to return last record first (FILO)
-    print topTwentyBookWords
+    # From the list of book words, delete those that appear in main word list.
+    for key in bookWords.iterkeys():
+        if key in wordWords:
+            bookWords.pop(key=key)
+
+    print bookWords
