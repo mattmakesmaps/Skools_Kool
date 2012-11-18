@@ -17,7 +17,7 @@ def processLine(sin, din):
     words = line.split()
     for word in words:
         # http://stackoverflow.com/questions/265960/best-way-to-strip-punctuation-from-a-string-in-python
-        word = word.translate(string.maketrans("",""), string.punctuation)
+        word = word.translate(string.maketrans("",""), string.punctuation + string.digits)
         word = word.lower()
         # Works, but could be made shorter
 #        if word in din:

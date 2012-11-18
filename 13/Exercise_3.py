@@ -12,7 +12,7 @@ def processLine(sin, din):
     words = line.split()
     for word in words:
         # http://stackoverflow.com/questions/265960/best-way-to-strip-punctuation-from-a-string-in-python
-        word = word.translate(string.maketrans("",""), string.punctuation).lower()
+        word = word.translate(string.maketrans("",""), string.punctuation + string.digits).lower()
         # Use get method to check for key. If key is not present, use value of 0.
         # Reassign new key value
         din[word] = 1 + din.get(word, 0)
