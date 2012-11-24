@@ -12,6 +12,7 @@ import copy
 class Rectangle(object):
     """Represents a rectangle."""
     def __init__(self, w, h, p=Point(0,0)):
+        assert isinstance(p, Point)
         self.width = w
         self.height = h
         self.corner = p
@@ -65,3 +66,13 @@ if __name__ == '__main__':
 
     print 'Method Result r1.corner.x: %s' % r1.corner.x
     print 'r2.corner.x: %s' % r2.corner.x
+
+    r2.corner.x = 99
+    r2.corner.y = 99
+
+    print 'Manual reset of r2: x - %g, y - %g ' % (r2.corner.x, r2.corner.y)
+    print 'Post Reset - r1.corner.x: %s' % r1.corner.x
+    print 'Post Reset - r2.corner.x: %s' % r2.corner.x
+    print 'r1.corner.x is r2.corner.x: %s' % r1.corner.x is r2.corner.x
+    print 'r1.corner.x == r2.corner.x: %s' % r1.corner.x == r2.corner.x
+

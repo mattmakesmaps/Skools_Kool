@@ -8,6 +8,9 @@ class Point(object):
         self.x = x
         self.y = y
 
+    def coord(self):
+        return [self.x,self.y]
+
 def distance_between_points(p1, p2):
     """Return distance between two points"""
     try:
