@@ -1,10 +1,89 @@
 Matt Kenny UW Python Presentation
 =================================
 
-# What Do I Do
+## What Do I Do
 
-# Work Interest In Python
+* GIS Analyst, RIDOLFI Inc.
 
-# Personal Interest In Python
+>  Provide scientific and engineering consulting services
+>  that focus on improving environmental conditions.
+
+*  Work primarilly with Tribal Nations.
+
+![Sampling Hazardous Materials](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/sd_sampling.jpg)
+
+**Above: Sampling Hazardous Soils, Port Gamble Bay.**
+
+![Sampling Hazardous Materials](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/HazSiteModel.jpg)
+
+**Above: Example Output, Hazardous Sites Identification Along the Columbia River.**
+
+*  Primarilly Commercial Software By Day.
+*  Open Source Software For Fun.
+
+## Work Interest In Python
+
+*  Want to more efficiently organize information, both spatial and tabular data.
+   *  Provide ways for technical experts to view data.
+   *  Provide me with a mechanism to easily organize/sort data.
+
+*  One way to do that is through GeoDjango.
+   *  Began creation of an application to track data processing workflows. Realized I should be learning Python, rather then learning Django.
+   *  End goal is to have an application that will store GPS data relating to sampling locations, and link those samples to their respective analytical results (currently stored in SQL Server).
+
+![First Draft GeoDjango](http://www.mkgeomatics.com/wordpress/wp-content/uploads/2011/11/Screenshot-2.png)
+
+## Personal Interest In Python
+
+**Kite Aerial Photography (KAP)**
+
+Cascadia Users of Geospatial Open Source (CUGOS) experimented with mounting cameras to kites for DIY aerial imaging.
+
+![Kite/Picavet](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/kite_picavet.JPG)
+
+**Above: **
+
+![Kite/Picavet](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/picavet_closeup.JPG)
+
+**Above: **
+
+![Camera Mount](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/camera_mount.JPG)
+
+**Above: **
+
+![Hack 1](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/hack_1.JPG)
+
+**Above: **
+
+![Hack 2](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/hack_2.JPG)
+
+**Above: **
+
+![Example Warp](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/example_warp.JPG)
+
+**Above: **
 
 ![Example Composite](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/example_composite.JPG)
+
+**Above: **
+
+### So, where is this going?
+
+We've got a lot of hardware in our group:
+
+  * Rasberry Pi's
+  * Cheap Cameras
+  * Kites
+  * Wireless Hotspots
+
+It would be cool to use python to tie all of these devices together.
+Cameras could be syncronized together using the rasberry pi.
+Data (images) could be transferred to the ground using a wifi connection.
+
+### Shameless Plug
+
+CUGOS Meetings 3rd Wed of the Month.
+
+site/mailing list: [cugos.org](cugos.org)
+
+IRC: #cugos on irc://freenode
