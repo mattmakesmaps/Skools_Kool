@@ -12,7 +12,7 @@ Matt Kenny UW Python Presentation
 
 ![Sampling Hazardous Materials](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/sd_sampling.jpg)
 
-**Above: Sampling Hazardous Soils, Port Gamble Bay.**
+**Above: RIDOLFI Biologist Sampling Hazardous Soils, Port Gamble Bay. Source: Northwest Indian Fisheries Commision**
 
 ![Sampling Hazardous Materials](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/HazSiteModel.jpg)
 
