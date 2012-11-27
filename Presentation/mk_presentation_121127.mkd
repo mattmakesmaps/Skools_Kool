@@ -7,4 +7,4 @@ Matt Kenny UW Python Presentation
 
 # Personal Interest In Python
 
-![Example Composite](https://github.com/mattmakesmaps/Skools_Kool/blob/master/Presentation/img/example_composite.JPG)
+![Example Composite](https://github.com/mattmakesmaps/Skools_Kool/blob/master/Presentation/img/example_composite.png)
