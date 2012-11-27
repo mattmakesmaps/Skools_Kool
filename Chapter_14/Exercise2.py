@@ -28,6 +28,6 @@ if __name__ == '__main__':
     print os.getcwd()
     pattern = 'oy'
     replacement = 'it'
-    fin = "/home/matt/projects/Skools_Kool/14/Exercise2_Test.txt"
-    fout = "/home/matt/projects/Skools_Kool/14/Exercise2_Out.txt"
+    fin = "/home/matt/projects/Skools_Kool/Chapter_14/Exercise2_Test.txt"
+    fout = "/home/matt/projects/Skools_Kool/Chapter_14/Exercise2_Out.txt"
     sed(pattern, replacement, fin, fout)

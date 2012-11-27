@@ -17,4 +17,4 @@ def is_power(a,b):
 if __name__ == '__main__':
     print is_power(1024,4)
     #print "\n"
-    #print is_power(4,16)
+    #print is_power(4,Chapter_16)

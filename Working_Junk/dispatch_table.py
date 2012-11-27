@@ -1,7 +1,7 @@
 __author__ = 'matt'
 """
 An example of a dispatch table.
-http://my.safaribooksonline.com/book/programming/python/0596007973/python-shortcuts/pythoncook2-chp-4-sect-16
+http://my.safaribooksonline.com/book/programming/python/0596007973/python-shortcuts/pythoncook2-chp-4-sect-Chapter_16
 """
 
 import sys

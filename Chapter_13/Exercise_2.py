@@ -48,8 +48,8 @@ def processFile(fin, processFunc):
         myFile.close()
 
 if __name__ == '__main__':
-    bookFile = '/Users/matt/Documents/PyCharm/Skools_Kool/13/Books/moby_dick.txt'
-    infile = '/Users/matt/Documents/PyCharm/Skools_Kool/13/testtext.txt'
+    bookFile = '/Users/matt/Documents/PyCharm/Skools_Kool/Chapter_13/Books/moby_dick.txt'
+    infile = '/Users/matt/Documents/PyCharm/Skools_Kool/Chapter_13/testtext.txt'
     words, distinctWordCount = processFile(bookFile, processLine)
     print words
     print distinctWordCount

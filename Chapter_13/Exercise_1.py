@@ -22,5 +22,5 @@ def stringer(fin):
         myFile.close()
 
 if __name__ == '__main__':
-    infile = '/Users/matt/Documents/PyCharm/Skools_Kool/13/testtext.txt'
+    infile = '/Users/matt/Documents/PyCharm/Skools_Kool/Chapter_13/testtext.txt'
     print stringer(infile)

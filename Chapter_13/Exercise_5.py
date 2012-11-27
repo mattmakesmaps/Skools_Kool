@@ -1,7 +1,7 @@
 __author__ = 'matt'
 
 """
-Write a function named choose_from_hist that takes a histogram as defined in Section 11.1 and returns a random value from the histogram, chosen with probability in proportion to frequency. For example, for this histogram:
+Write a function named choose_from_hist that takes a histogram as defined in Section Chapter_11.1 and returns a random value from the histogram, chosen with probability in proportion to frequency. For example, for this histogram:
 >>> t = ['a', 'a', 'b']
 >>> hist = histogram(t)
 >>> print hist

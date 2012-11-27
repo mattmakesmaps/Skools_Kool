@@ -18,6 +18,6 @@ def has_word(fin, wordin):
     return False
 
 if __name__ == '__main__':
-    print has_word('/Users/matt/Documents/PyCharm/Skools_Kool/09/words2.txt', 'cat')
-    print has_word('/Users/matt/Documents/PyCharm/Skools_Kool/09/words2.txt', 'cat')
+    print has_word('/Users/matt/Documents/PyCharm/Skools_Kool/Chapter_09/words2.txt', 'cat')
+    print has_word('/Users/matt/Documents/PyCharm/Skools_Kool/Chapter_09/words2.txt', 'cat')
 

@@ -38,6 +38,6 @@ def word_distance(word1, word2):
 
 
 if __name__ == '__main__':
-    d = all_anagrams('/Users/matt/Documents/PyCharm/Skools_Kool/14/words.txt')
+    d = all_anagrams('/Users/matt/Documents/PyCharm/Skools_Kool/Chapter_14/words.txt')
     metathesis_pairs(d)
 

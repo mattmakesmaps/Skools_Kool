@@ -35,8 +35,8 @@ def processFile(fin, processFunc):
         myFile.close()
 
 if __name__ == '__main__':
-    bookFile = '/Users/matt/Documents/PyCharm/Skools_Kool/13/Books/moby_dick.txt'
-    wordFile = '/Users/matt/Documents/PyCharm/Skools_Kool/14/words.txt'
+    bookFile = '/Users/matt/Documents/PyCharm/Skools_Kool/Chapter_13/Books/moby_dick.txt'
+    wordFile = '/Users/matt/Documents/PyCharm/Skools_Kool/Chapter_14/words.txt'
     bookWords = processFile(bookFile, processLine)
     wordWords = processFile(wordFile, processLine)
 

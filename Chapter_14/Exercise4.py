@@ -59,7 +59,7 @@ def findDupsViaCounter(dicts):
             print "Duplicate Checksum Found: %s" % key
 
 if __name__ == '__main__':
-    filesAndChecks = fileFinder('/Users/matt/PyCharmProjects/Skools_Kool/14','py')
+    filesAndChecks = fileFinder('/Users/matt/PyCharmProjects/Skools_Kool/Chapter_14','py')
     print filesAndChecks
     print "Begin Duplicate Check using findDupsViaDict()"
     findDupsViaDict(filesAndChecks)

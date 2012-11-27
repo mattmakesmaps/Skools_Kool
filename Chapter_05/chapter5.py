@@ -4,7 +4,7 @@ def printStuff(s='some default text'):
     """Print a string"""
     print s
     # infinite recursion
-    #do_n(printStuff, 10)
+    #do_n(printStuff, Chapter_10)
 
 def do_n(f, n=5):
     if n<0:
@@ -54,8 +54,8 @@ def is_triangle(edgeList):
         print "No"
 
 if __name__ == '__main__':
-    # Exercise 5.14.4
-    print "Begin Exercise 5.14 Number 4"
+    # Exercise 5.Chapter_14.4
+    print "Begin Exercise 5.Chapter_14 Number 4"
     edgeList = []
     getInput(edgeList, 'Enter Edge Length>>> ', 3)
     is_triangle(edgeList)

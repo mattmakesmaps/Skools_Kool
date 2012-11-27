@@ -54,7 +54,7 @@ def is_abcedarian(word):
     # For whatever reason, above code won't assign a sorted instance of list splitter to sorted
     # but rather will go ahead and sort splitter, and return sorted is None
     # OK What's happening is that the list is being aliased, not cloned.
-    # http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap08.html see 8.11-8.12
+    # http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap08.html see 8.Chapter_11-8.Chapter_12
     sorted = splitter[:] # clone that shit, with a slice
     sorted.sort()
     if splitter == sorted:
