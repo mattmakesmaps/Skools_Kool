@@ -28,10 +28,14 @@ Matt Kenny UW Python Presentation
    *  Provide me with a mechanism to easily organize/sort data.
 
 *  One way to do that is through GeoDjango.
-   *  Began creation of an application to track data processing workflows. Realized I should be learning Python, rather then learning Django.
-   *  End goal is to have an application that will store GPS data relating to sampling locations, and link those samples to their respective analytical results (currently stored in SQL Server).
+   *  Began creation of an application to track data processing workflows. 
+      Realized I should be learning Python, rather then learning Django.
+   *  End goal is to have an application that will store GPS data relating to sampling locations,
+      and link those samples to their respective analytical results (currently stored in SQL Server).
 
 ![First Draft GeoDjango](http://www.mkgeomatics.com/wordpress/wp-content/uploads/2011/11/Screenshot-2.png)
+
+**Above: Draft GeoDjango application for tracking sampling data workflow**
 
 ## Personal Interest In Python
 
@@ -41,31 +45,31 @@ Cascadia Users of Geospatial Open Source (CUGOS) experimented with mounting came
 
 ![Kite/Picavet](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/kite_picavet.JPG)
 
-**Above: **
+**Above: Kite with Flip HD Camera Attached by Picavet.**
 
 ![Kite/Picavet](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/picavet_closeup.JPG)
 
-**Above: **
-
-![Camera Mount](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/camera_mount.JPG)
-
-**Above: **
-
-![Hack 1](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/hack_1.JPG)
-
-**Above: **
-
-![Hack 2](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/hack_2.JPG)
-
-**Above: **
-
-![Example Warp](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/example_warp.JPG)
-
-**Above: **
+**Above: Picavet Closeup.**
 
 ![Example Composite](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/example_composite.JPG)
 
-**Above: **
+**Above: Final composite with color band re-organization.**
+
+![Example Warp](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/example_warp.JPG)
+
+**Above: Overlay Near-IR Image and True Color Image**
+
+![Camera Mount](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/camera_mount.JPG)
+
+**Above: Side-by-side camera mount, True Color camera and Near-IR Camera.**
+
+![Hack 1](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/hack_1.JPG)
+
+**Above: Camera surgery.**
+
+![Hack 2](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/hack_2.JPG)
+
+**Above: More camera surgery.**
 
 ### So, where is this going?
 
@@ -79,6 +83,8 @@ We've got a lot of hardware in our group:
 It would be cool to use python to tie all of these devices together.
 Cameras could be syncronized together using the rasberry pi.
 Data (images) could be transferred to the ground using a wifi connection.
+
+Real-word applications as well. E.g. Monitoring health of vegetation at restoration sites.
 
 ### Shameless Plug
 
