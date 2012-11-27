@@ -8,17 +8,17 @@ Matt Kenny UW Python Presentation
 >  Provide scientific and engineering consulting services
 >  that focus on improving environmental conditions.
 
-*  Work primarilly with Tribal Nations.
+*  Work primarily with Tribal Nations.
 
 ![Sampling Hazardous Materials](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/sd_sampling.jpg)
 
-**Above: RIDOLFI Biologist Sampling Hazardous Soils, Port Gamble Bay. Source: Northwest Indian Fisheries Commision**
+**Above: RIDOLFI Biologist Sampling Hazardous Soils, Port Gamble Bay. Source: Northwest Indian Fisheries Commission**
 
 ![Sampling Hazardous Materials](https://github.com/mattmakesmaps/Skools_Kool/raw/master/Presentation/img/HazSiteModel.jpg)
 
 **Above: Example Output, Hazardous Sites Identification Along the Columbia River.**
 
-*  Primarilly Commercial Software By Day.
+*  Primarily Commercial Software By Day.
 *  Open Source Software For Fun.
 
 ## Work Interest In Python
@@ -75,14 +75,14 @@ Cascadia Users of Geospatial Open Source (CUGOS) experimented with mounting came
 
 We've got a lot of hardware in our group:
 
-  * Rasberry Pi's
+  * Raspberry Pi's
   * Cheap Cameras
   * Kites
   * Wireless Hotspots
 
 It would be cool to use python to tie all of these devices together.
-Cameras could be syncronized together using the rasberry pi.
-Data (images) could be transferred to the ground using a wifi connection.
+Cameras could be synchronized  together using the raspberry pi.
+Data (images) could be transferred to the ground using a wi-fi connection.
 
 Real-word applications as well. E.g. Monitoring health of vegetation at restoration sites.
 
