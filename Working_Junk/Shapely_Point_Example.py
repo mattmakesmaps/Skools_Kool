@@ -29,3 +29,22 @@ p1 = Point(55,55)
 print p1
 print p2
 
+for i in ['x','y','z']:
+    # z is not set, should raise DimensionError based on code in point class
+    try:
+        print getattr(p1, i)
+    except Exception, e:
+        print e
+        pass
+
+# Yes you can create an empty point
+p3 = Point()
+
+for i in ['x','y','z']:
+    try:
+        print getattr(p3, i)
+    except Exception, e:
+        print e
+        p3.__setattr__(i,99)
+#        print getattr(p3,i)
+
