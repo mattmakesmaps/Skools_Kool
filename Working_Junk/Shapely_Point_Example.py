@@ -38,13 +38,6 @@ for i in ['x','y','z']:
         pass
 
 # Yes you can create an empty point
-p3 = Point()
 
-for i in ['x','y','z']:
-    try:
-        print getattr(p3, i)
-    except Exception, e:
-        print e
-        p3.__setattr__(i,99)
-#        print getattr(p3,i)
-
+p3 = Point(10,10)
+p3.buffer(10).area
