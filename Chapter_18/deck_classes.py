@@ -72,6 +72,22 @@ class Deck(object):
         for i in range(num):
             hand.add_card(self.pop_card())
 
+    def deal_hands(self, numHands, numCards):
+        """
+        Exercise 3:
+
+        Write a Deck method called deal_hands that takes two parameters,
+        the number of hands and the number of cards per hand, and that
+        creates new Hand objects, deals the appropriate number of
+        cards per hand, and returns a list of Hand objects.
+        """
+        handList = []
+        for hand in range(numHands):
+            hOut = Hand()
+            self.move_cards(hOut,numCards)
+            handList.append(hOut)
+        return handList
+
 class Hand(Deck):
     """Represents a poker hand"""
     # NOTE: This does need to appear after Deck class definition,
@@ -117,5 +133,10 @@ if __name__ == '__main__':
     deck3.move_cards(mattHand,10)
     print len(deck3.cards)
     print len(mattHand.cards)
+
+    deck4 = Deck()
+    deck4Hands = deck4.deal_hands(2,5)
+    print deck4Hands
+    deck4Hands[0].deal_hands(1,10)
 
 
