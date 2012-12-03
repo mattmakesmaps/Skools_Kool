@@ -1,0 +1,7 @@
+WSGI Scripts
+============
+
+These scripts end up at
+
+    /usr/local/WSGITest
+

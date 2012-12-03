@@ -15,7 +15,7 @@ class Time(object):
         self.timestamp = timestamp
         self.to_seconds # Call to_seconds at construction to populate that value
 
-    @property
+    @property # This references a property() built-in function stored in the inherited class 'object'
     def to_seconds(self):
         """Convert time to seconds (from Jeff's Code"""
         self.timestamp = self.seconds + (self.minutes * 60) + (self.hours * 3600)
