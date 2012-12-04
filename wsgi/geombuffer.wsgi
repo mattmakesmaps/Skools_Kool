@@ -1,39 +1,51 @@
 """
-Goal is to take generalize pointbuffer.wsgi to accept points,lines,polygons
-Polygons look like Polygon(((-1.0, -1.0), (-1.0, 1.0), (1.0, 1.0), (1.0, -1.0)))
+A generalized WSGI script accepting a tuple of coordinate pairs, a buffer, and geom type.
+Will return as WKT a Polygon representation of that buffer.
+
+args:
+coords - A tuple of coordinate pairs.
+bufferdist - The desired buffer distance.
+geomtype - the input geometry type. Point, Line, Polygon.
 
 An Example Query String:
-http://localhost/geombuffer?geom=((-1.0, -1.0), (-1.0, 1.0), (1.0, 1.0), (1.0, -1.0))&buffer=20
+http://localhost/geombuffer?coords=((-1.0,-1.0),(-1.0,1.0),(1.0,1.0),(1.0,-1.0))&bufferdist=20&geomtype=polygon
 
 Resulting *args tuple:
-({'buffer': ['20'], 'geom': ['((-1.0, -1.0), (-1.0, 1.0), (1.0, 1.0), (1.0, -1.0))']},)
+({'bufferdist': ['20'], 'geomtype': ['polygon'], 'coords': ['((-1.0,-1.0),(-1.0,1.0),(1.0,1.0),(1.0,-1.0))']},)
 
 """
 from shapely.geometry import Point, LineString, Polygon
 from urlparse import parse_qs
+from ast import literal_eval
 
 def create_buff(*args, **kwargs):
     """Return a WKT representation for a geom and buffer distance"""
-    if 'geom' in args[0]:
-        geomStr = args[0]['geom'][0]
+    try:
+        # Parse useful values from the Query String.
+        coords = literal_eval(args[0]['coords'][0]) # literal_eval should help protect against injection
+        geomtypeStr = args[0]['geomtype'][0].lower()
+        geomBuff = literal_eval(args[0]['bufferdist'][0])
 
-    return 'args: %s \n geomStr: %s' % (str(args), geomStr)
+        # Dispatch table. Is there a better way to create instances of these objects?
+        geomDispatch = {'point':Point, 'line':LineString, 'polygon':Polygon}
+
+        if geomtypeStr in geomDispatch:
+            # Create the input/buffer geometry instances
+            inputGeom = geomDispatch[geomtypeStr](coords)
+            buffGeom = inputGeom.buffer(geomBuff)
+
+        return buffGeom.wkt
+
+    except Exception, e:
+        # TODO: Replace with more appropriate exception.
+        print e
 
 def application(environ, start_response):
     """
-    for a query string such as: http://localhost/wsgitest?x=5&y=10&buff=15
-    the query string dictionary will look like:
-    {'x': ['5'], 'y': ['10'], 'buff':['15']}
+    The mod_wsgi application function. Generates response headers and handles the CGI environ variables.
     """
     parseDict = parse_qs(environ['QUERY_STRING'])
-    pointInfo = create_buff(parseDict)
-#    # Shapely expecting floats, not strings
-#    x = float(parseDict['x'][0])
-#    y = float(parseDict['y'][0])
-#    buff = float(parseDict['buff'][0])
-#
-#    pointInfo = create_buff(x,y,buff)
-    output = pointInfo
+    output = create_buff(parseDict)
 
     # Create headers and return buffered point as WKT
     status = '200 OK'
