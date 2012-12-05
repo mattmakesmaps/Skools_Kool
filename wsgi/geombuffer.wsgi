@@ -13,32 +13,46 @@ http://localhost/geombuffer?coords=((-1.0,-1.0),(-1.0,1.0),(1.0,1.0),(1.0,-1.0))
 Resulting *args tuple:
 ({'bufferdist': ['20'], 'geomtype': ['polygon'], 'coords': ['((-1.0,-1.0),(-1.0,1.0),(1.0,1.0),(1.0,-1.0))']},)
 
+TODO: Extract geometry creation functionality from create_buff. Will be useful if other functions are
+      created to do different spatial analyses (e.g. Union, Intersect, etc.)
 """
-from shapely.geometry import Point, LineString, Polygon
+from shapely.geometry import Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygon
 from urlparse import parse_qs
 from ast import literal_eval
+
+def create_geom():
+    """Given values from a WSGI Environ dictionary, return a shapely geom"""
+    pass
 
 def create_buff(*args, **kwargs):
     """Return a WKT representation for a geom and buffer distance"""
     try:
         # Parse useful values from the Query String.
-        coords = literal_eval(args[0]['coords'][0]) # literal_eval should help protect against injection
-        geomtypeStr = args[0]['geomtype'][0].lower()
-        geomBuff = literal_eval(args[0]['bufferdist'][0])
+        try:
+            coords = literal_eval(args[0]['coords'][0]) # literal_eval should help protect against injection
+            geomtypeStr = args[0]['geomtype'][0].lower()
+            geomBuff = literal_eval(args[0]['bufferdist'][0])
+        except KeyError, e:
+            return 'KeyError: Required Param Not Found: %s' % str(e)
 
         # Dispatch table. Is there a better way to create instances of these objects?
-        geomDispatch = {'point':Point, 'line':LineString, 'polygon':Polygon}
+        geomDispatch = {'point':Point, 'linestring':LineString, 'polygon':Polygon,
+                        'multipoint':MultiPoint,'multilinestring':MultiLineString,
+                        'multipolygon':MultiPolygon}
 
         if geomtypeStr in geomDispatch:
-            # Create the input/buffer geometry instances
+            # Create the input geometry instance
             inputGeom = geomDispatch[geomtypeStr](coords)
-            buffGeom = inputGeom.buffer(geomBuff)
+        else:
+            raise KeyError('geomtype value %s not supported.' % geomtypeStr)
 
+        # Create the buffer geometry instance
+        buffGeom = inputGeom.buffer(geomBuff)
         return buffGeom.wkt
 
     except Exception, e:
         # TODO: Replace with more appropriate exception.
-        print e
+        return "Encountered Error: %s" % str(e)
 
 def application(environ, start_response):
     """
