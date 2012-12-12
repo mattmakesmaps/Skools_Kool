@@ -17,7 +17,7 @@ http://localhost/geombuffer?coords=((0,0),(0,2),(1,1),(2,2),(2,0),(1,1),(0,0))&b
 Resulting *args tuple:
 ({'bufferdist': ['20'], 'geomtype': ['polygon'], 'coords': ['((-1.0,-1.0),(-1.0,1.0),(1.0,1.0),(1.0,-1.0))']},)
 """
-from shapely.geometry import Point, LineString, Polygon
+from shapely.geometry import Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygon
 from vectorformats.Formats import GeoJSON, WKT
 from urlparse import parse_qs
 from ast import literal_eval
@@ -103,6 +103,5 @@ if __name__ == '__main__':
 
     httpd = make_server('', 8240, application)
     print "Serving HTTP on port 8240..."
-
     # Respond to requests until process is killed
     httpd.serve_forever()
