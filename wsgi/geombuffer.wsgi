@@ -22,33 +22,28 @@ from ast import literal_eval
 
 def create_geom(*args):
     """Return a Shapely Geom from a WSGI Environ Dictionary"""
-    try:
         # Parse useful values from the Query String.
-        try:
-            coords = literal_eval(args[0]['coords'][0]) # literal_eval should help protect against injection
-            geomtypeStr = args[0]['geomtype'][0].lower()
-        except KeyError, e:
-            raise KeyError('Required URL Parameter %s not found.' % str(e))
+    try:
+        coords = literal_eval(args[0]['coords'][0]) # literal_eval should help protect against injection
+        geomtypeStr = args[0]['geomtype'][0].lower()
+    except KeyError, e:
+        raise KeyError('Required URL Parameter %s not found.' % str(e))
 
-        # Dispatch table. Is there a better way to create instances of these objects?
-        geomDispatch = {'point':Point, 'linestring':LineString, 'polygon':Polygon,
-                        'multipoint':MultiPoint,'multilinestring':MultiLineString,
-                        'multipolygon':MultiPolygon}
+    # Dispatch table. Is there a better way to create instances of these objects?
+    geomDispatch = {'point':Point, 'linestring':LineString, 'polygon':Polygon,
+                    'multipoint':MultiPoint,'multilinestring':MultiLineString,
+                    'multipolygon':MultiPolygon}
 
-        # Create the input geometry instance.
-        if geomtypeStr in geomDispatch:
-            inputGeom = geomDispatch[geomtypeStr](coords)
-        else:
-            raise KeyError('URL Parameter geomtype value %s not supported.' % geomtypeStr)
+    # Create the input geometry instance.
+    if geomtypeStr in geomDispatch:
+        inputGeom = geomDispatch[geomtypeStr](coords)
+    else:
+        raise KeyError('URL Parameter geomtype value %s not supported.' % geomtypeStr)
 
-        if inputGeom.is_valid:
-            return inputGeom
-        else:
-            raise ValueError('Coordinates passed do not form a valid %s.' % geomtypeStr)
-
-    except Exception, e:
-        # It's blank because it's re-raising any raised exceptions.
-        raise
+    if inputGeom.is_valid:
+        return inputGeom
+    else:
+        raise ValueError('Coordinates passed do not form a valid %s.' % geomtypeStr)
 
 def create_buff(*args):
     """Return a WKT representation for a geom and buffer distance"""
