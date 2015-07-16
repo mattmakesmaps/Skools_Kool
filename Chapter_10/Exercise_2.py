@@ -10,17 +10,14 @@ def capitalize_all(t):
         res.append(s.capitalize())
     return res
 
-def capitalize_nested(t):
-    res = []
-    for innerlist in t:
-        if isinstance(innerlist, list):
-            newList = []
-            for element in innerlist:
-                newList.append(element.capitalize())
-            res.append(newList)
-        else:
-            res.append(innerlist.capitalize())
-    return res
+# this function works for nested lists of arbitrary depth
+def capitalize_nested(nest_list):
+	'''Return a new nested list with all strings capitalized.
+	   nest_list -> that takes a nested list of strings.'''
+	if isinstance(nest_list, list):
+		return [capitalize_nested(s) for s in nest_list]
+	else:
+		return nest_list.capitalize()
 
 if __name__ == '__main__':
     print "capitalize_all()"
